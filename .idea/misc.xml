@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Black">
+    <option name="sdkName" value="Python 3.13 (SpotifyTelegramBot)" />
+  </component>
+  <component name="ExtraIDETweaksSettingsProject">
+    <option name="enableOpenEditorsShowRecentFiles" value="false" />
+  </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="Remote Python 3.12.3 (sftp://dayzee@46.29.238.173:2222/home/dayzee/SpotifyTelegramBot/bin/python)" project-jdk-type="Python SDK" />
+</project>
