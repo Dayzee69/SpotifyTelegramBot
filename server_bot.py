@@ -8,6 +8,17 @@ import time
 from flask import Flask, request, Response
 import threading
 from waitress import serve
+import logging
+
+logging.basicConfig(
+  level=logging.INFO,
+  format='%(asctime)s - %(levelname)s - %(message)s',
+  filename='/home/dayzee/SpotifyTelegramBot//bot.log',
+  filemode='a'
+)
+logger = logging.getLogger()
+
+logger.info('Бот запущен')
 web = Flask(__name__)
 
 with open('settings.json', 'r', encoding='utf-8') as f:
@@ -122,7 +133,11 @@ def run_flask():
     serve(web, host='0.0.0.0', port=8080)
 
 def run_polling():
-    bot.polling(none_stop=True)
+    try:
+        bot.polling(none_stop=True)
+    except Exception as e:
+        logging.error(f"Polling error: {e}")
+        time.sleep(15)
 
 spotify_clients_cache = load_clients()
 
